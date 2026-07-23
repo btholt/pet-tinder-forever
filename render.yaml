@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: pawmarks
+    runtime: node
+    plan: starter
+    region: oregon
+    buildCommand: npm ci && npm run build && npm run db:migrate
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: DATABASE_URL
+        sync: false
+      - key: BETTER_AUTH_SECRET
+        generateValue: true
+      - key: BETTER_AUTH_URL
+        sync: false

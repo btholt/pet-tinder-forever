@@ -196,12 +196,12 @@ Report: the §13 checklist with a pass/fail and a note for each line, plus scree
 
 Do not start this without explicit approval, and do not push to GitHub until asked.
 
-- [ ] `render.yaml` exactly as in CLAUDE.md §12.
-- [ ] Verify `npm ci && npm run build && npm run db:migrate && npm start` works from a clean checkout in a scratch directory with `NODE_ENV=production`, serving the built client and the API on one port.
-- [ ] Confirm `/api/health` does a real `SELECT 1` and returns non-200 when the database is unreachable.
-- [ ] Write a short deploy section in the README: what to set for `DATABASE_URL` (the **internal** Render connection string once deployed), `BETTER_AUTH_URL` (the deployed origin), and `BETTER_AUTH_SECRET`.
-- [ ] **Ask before pushing.** Then push to GitHub and connect the Render service.
-- [ ] After the first successful deploy: verify sign-up, swiping, and matches all work against production, and confirm the migration ran during the build.
+- [x] `render.yaml` exactly as in CLAUDE.md §12.
+- [x] Verify `npm ci && npm run build && npm run db:migrate && npm start` works from a clean checkout in a scratch directory with `NODE_ENV=production`, serving the built client and the API on one port.
+- [x] Confirm `/api/health` does a real `SELECT 1` and returns non-200 when the database is unreachable.
+- [x] Write a short deploy section in the README: what to set for `DATABASE_URL` (the **internal** Render connection string once deployed), `BETTER_AUTH_URL` (the deployed origin), and `BETTER_AUTH_SECRET`.
+- [ ] **Ask before pushing.** Then push to GitHub and connect the Render service. — **BLOCKED: no GitHub remote or Render account is configured in this environment; requires the user's credentials/access.**
+- [ ] After the first successful deploy: verify sign-up, swiping, and matches all work against production, and confirm the migration ran during the build. — blocked on the item above.
 
 ### ✋ Gate 9 — stop and report
 
