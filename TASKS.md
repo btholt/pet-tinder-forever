@@ -60,11 +60,11 @@ Report: the generated migration SQL, the migrate command output, and a `\dt`-equ
 
 Goal: 60 pets with real personality living in the database.
 
-- [ ] `server/db/seed-data.ts` — 60 hand-authored pets. **Write these; do not generate them from word lists.** 30 dogs, 14 cats, 9 birds, 4 rabbits, 3 reptiles. Each needs a name, plausible breed, `age_months`, gender, size, a 1–2 sentence first-person bio in the voice shown in CLAUDE.md §7, 2–4 traits, city/state, and an adoption fee between $45 and $450 scaled roughly by species and age.
-- [ ] Photo assignment: 1–3 distinct URLs from that pet's species pool, primary first. Distinct within a pet; repeats across pets are fine. Respect the pool sizes (only 2 reptile images exist, so reptiles get at most 2 photos).
-- [ ] `server/db/seed.ts` — idempotent: inserts only when `pets` is empty. `-- --force` truncates and reseeds, refusing to run under `NODE_ENV=production` unless `ALLOW_DESTRUCTIVE_SEED=1`.
-- [ ] Run `npm run db:seed` against the real database.
-- [ ] Write a throwaway script to `HEAD` every seeded photo URL and confirm all 60 pets' images return 200. Delete the script after.
+- [x] `server/db/seed-data.ts` — 60 hand-authored pets. **Write these; do not generate them from word lists.** 30 dogs, 14 cats, 9 birds, 4 rabbits, 3 reptiles. Each needs a name, plausible breed, `age_months`, gender, size, a 1–2 sentence first-person bio in the voice shown in CLAUDE.md §7, 2–4 traits, city/state, and an adoption fee between $45 and $450 scaled roughly by species and age.
+- [x] Photo assignment: 1–3 distinct URLs from that pet's species pool, primary first. Distinct within a pet; repeats across pets are fine. Respect the pool sizes (only 2 reptile images exist, so reptiles get at most 2 photos).
+- [x] `server/db/seed.ts` — idempotent: inserts only when `pets` is empty. `-- --force` truncates and reseeds, refusing to run under `NODE_ENV=production` unless `ALLOW_DESTRUCTIVE_SEED=1`.
+- [x] Run `npm run db:seed` against the real database.
+- [x] Write a throwaway script to `HEAD` every seeded photo URL and confirm all 60 pets' images return 200. Delete the script after.
 
 ### ✋ Gate 2 — stop and report
 
