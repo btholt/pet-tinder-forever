@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-ink: #21123a; /* deep plum-black — all text, never pure black */
+  --color-paper: #fff6f0; /* warm blush white — app background */
+  --color-berry: #ff3d68; /* primary / pass */
+  --color-mango: #ff9e44; /* primary gradient end */
+  --color-grape: #6c4bf4; /* match takeover, secondary CTA */
+  --color-mint: #14c9a0; /* adopt / affirmative */
+  --color-sun: #ffd23f; /* accents, confetti */
+
+  --font-display: "Fredoka", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+/* shadcn/ui primitives read these as their design tokens, mapped onto ours
+   instead of the default neutral palette. */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 1rem;
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --card: var(--color-paper);
+  --card-foreground: var(--color-ink);
+  --popover: var(--color-paper);
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-berry);
+  --primary-foreground: var(--color-paper);
+  --secondary: var(--color-grape);
+  --secondary-foreground: var(--color-paper);
+  --muted: color-mix(in oklab, var(--color-ink) 6%, var(--color-paper));
+  --muted-foreground: color-mix(in oklab, var(--color-ink) 65%, var(--color-paper));
+  --accent: var(--color-mango);
+  --accent-foreground: var(--color-ink);
+  --destructive: var(--color-berry);
+  --border: color-mix(in oklab, var(--color-ink) 15%, var(--color-paper));
+  --input: color-mix(in oklab, var(--color-ink) 15%, var(--color-paper));
+  --ring: var(--color-berry);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
