@@ -10,6 +10,12 @@
   --color-mint: #14c9a0; /* adopt / affirmative */
   --color-sun: #ffd23f; /* accents, confetti */
 
+  /* Species accent chips (CLAUDE.md §9). Dog/cat/reptile reuse the core
+     palette; bird and rabbit need their own tokens since they aren't part
+     of the seven core brand colors above. */
+  --color-species-bird: #38bdf8;
+  --color-species-rabbit: #ff8fa3;
+
   --font-display: "Fredoka", sans-serif;
   --font-sans: "Plus Jakarta Sans", sans-serif;
 }
@@ -71,3 +77,32 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes match-pop {
+  0% {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .confetti-piece {
+    display: none;
+  }
+}
+

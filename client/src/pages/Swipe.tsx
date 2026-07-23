@@ -1,11 +1,31 @@
+import { useCallback, useState } from "react";
+import { useNavigate } from "react-router";
+import type { Pet } from "@shared/types";
 import { AppLayout } from "@/components/AppLayout";
+import { SwipeDeck } from "@/components/SwipeDeck";
+import { MatchTakeover } from "@/components/MatchTakeover";
 
 export function Swipe() {
+  const navigate = useNavigate();
+  const [matchedPet, setMatchedPet] = useState<Pet | null>(null);
+
+  const handleMatch = useCallback((pet: Pet) => {
+    setMatchedPet(pet);
+  }, []);
+
+  const dismissMatch = useCallback(() => setMatchedPet(null), []);
+
   return (
     <AppLayout>
-      <div className="flex h-full items-center justify-center">
-        <p className="text-muted-foreground">Loading the deck…</p>
-      </div>
+      <SwipeDeck onMatch={handleMatch} />
+      <MatchTakeover
+        pet={matchedPet}
+        onKeepSwiping={dismissMatch}
+        onSeeMatches={() => {
+          dismissMatch();
+          navigate("/matches");
+        }}
+      />
     </AppLayout>
   );
 }

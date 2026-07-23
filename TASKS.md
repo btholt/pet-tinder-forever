@@ -135,18 +135,18 @@ Report: screenshots of the landing page, sign-up page, and signed-in shell at bo
 
 The main event. Build to CLAUDE.md §8 precisely.
 
-- [ ] `PetCard.tsx` — full-bleed `object-cover` photo filling the card, bottom scrim, name in Fredoka at `text-4xl` with age beside it, breed · size · location line, trait chips in the species accent color. No white panel below the image.
-- [ ] Photo carousel: segmented progress bar pinned to the top of the card, one segment per photo. Left-third / right-third tap zones to move between photos. A tap must not fire if the pointer moved more than 6px.
-- [ ] `useSwipeGesture` hook — Pointer Events with `setPointerCapture`, `touch-action: none`. **One code path for mouse and touch.** Transforms driven imperatively through a ref inside `requestAnimationFrame`; React state changes only on commit.
-- [ ] Rotation, threshold, and velocity behavior exactly as specced: `θ = clamp(dx / cardWidth * 18, ±18)`, commit at `|dx| > 0.32 * cardWidth` or velocity `> 0.45 px/ms`, spring-back otherwise on the specified easing.
-- [ ] ADOPT and NOPE stamps fading in proportionally to drag distance, mint and berry, rotated ∓14°.
-- [ ] `SwipeDeck.tsx` — renders the top 3 cards, back two scaled 0.95/0.90 and `aria-hidden`, the card behind scaling toward 1.0 as the top card is dragged.
-- [ ] Keyboard: `←` pass, `→` adopt, `↑`/`↓` photos, `Backspace` undo. Deck focused on mount. Keyboard swipes play the same fly-off animation.
-- [ ] `ActionBar.tsx` — circular Pass / Undo / Adopt buttons floating over the card's bottom edge, keyboard operable with visible focus rings, hover 1.12 / press 0.94.
-- [ ] Queue management: fetch 20, refetch when under 5 remain, optimistic swipes with background POST, re-queue and toast on failure, `new Image()` preload of the next two primary photos.
-- [ ] Skeleton card on first load. Warm empty state with a link to `/matches` when the queue runs dry.
-- [ ] `aria-live="polite"` region announcing each swipe outcome by pet name.
-- [ ] `prefers-reduced-motion`: dragging still works, animations become instant cross-fades.
+- [x] `PetCard.tsx` — full-bleed `object-cover` photo filling the card, bottom scrim, name in Fredoka at `text-4xl` with age beside it, breed · size · location line, trait chips in the species accent color. No white panel below the image.
+- [x] Photo carousel: segmented progress bar pinned to the top of the card, one segment per photo. Left-third / right-third tap zones to move between photos. A tap must not fire if the pointer moved more than 6px.
+- [x] `useSwipeGesture` hook — Pointer Events with `setPointerCapture`, `touch-action: none`. **One code path for mouse and touch.** Transforms driven imperatively through a ref inside `requestAnimationFrame`; React state changes only on commit.
+- [x] Rotation, threshold, and velocity behavior exactly as specced: `θ = clamp(dx / cardWidth * 18, ±18)`, commit at `|dx| > 0.32 * cardWidth` or velocity `> 0.45 px/ms`, spring-back otherwise on the specified easing.
+- [x] ADOPT and NOPE stamps fading in proportionally to drag distance, mint and berry, rotated ∓14°.
+- [x] `SwipeDeck.tsx` — renders the top 3 cards, back two scaled 0.95/0.90 and `aria-hidden`, the card behind scaling toward 1.0 as the top card is dragged.
+- [x] Keyboard: `←` pass, `→` adopt, `↑`/`↓` photos, `Backspace` undo. Deck focused on mount. Keyboard swipes play the same fly-off animation.
+- [x] `ActionBar.tsx` — circular Pass / Undo / Adopt buttons floating over the card's bottom edge, keyboard operable with visible focus rings, hover 1.12 / press 0.94.
+- [x] Queue management: fetch 20, refetch when under 5 remain, optimistic swipes with background POST, re-queue and toast on failure, `new Image()` preload of the next two primary photos.
+- [x] Skeleton card on first load. Warm empty state with a link to `/matches` when the queue runs dry.
+- [x] `aria-live="polite"` region announcing each swipe outcome by pet name.
+- [x] `prefers-reduced-motion`: dragging still works, animations become instant cross-fades.
 
 ### ✋ Gate 6 — stop and report
 
