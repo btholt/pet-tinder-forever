@@ -158,12 +158,12 @@ Report: a screen recording or GIF of a mouse drag on desktop, a keyboard-only sw
 
 ## Milestone 7 — Matches and the match takeover
 
-- [ ] `MatchTakeover.tsx` — full-bleed overlay on every right-swipe: the pet's photo scaled behind a grape scrim, "It's a match!" in Fredoka on the brand gradient, the pet's name, confetti in berry/mango/sun/mint, and "Keep swiping" / "See matches" buttons. Auto-dismiss at 2.2s or on any tap. Suppressed under `prefers-reduced-motion` in favor of a plain cross-fade with no confetti.
-- [ ] Confetti hand-rolled with CSS or a small canvas — no new dependency.
-- [ ] `/matches` page: responsive grid of full-bleed photo tiles, name and location over a scrim on each. 2 columns on mobile, up to 4 on desktop.
-- [ ] Each tile can be un-adopted, which calls the undo endpoint and returns the pet to the queue, with a toast.
-- [ ] Empty state for `/matches`: an invitation to start swiping, with a button to `/swipe`.
-- [ ] Loading and error states for both screens.
+- [x] `MatchTakeover.tsx` — full-bleed overlay on every right-swipe: the pet's photo scaled behind a grape scrim, "It's a match!" in Fredoka on the brand gradient, the pet's name, confetti in berry/mango/sun/mint, and "Keep swiping" / "See matches" buttons. Auto-dismiss at 2.2s or on any tap. Suppressed under `prefers-reduced-motion` in favor of a plain cross-fade with no confetti.
+- [x] Confetti hand-rolled with CSS or a small canvas — no new dependency.
+- [x] `/matches` page: responsive grid of full-bleed photo tiles, name and location over a scrim on each. 2 columns on mobile, up to 4 on desktop.
+- [x] Each tile can be un-adopted, which calls the undo endpoint and returns the pet to the queue, with a toast.
+- [x] Empty state for `/matches`: an invitation to start swiping, with a button to `/swipe`.
+- [x] Loading and error states for both screens.
 
 ### ✋ Gate 7 — stop and report
 
