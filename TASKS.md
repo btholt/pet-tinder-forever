@@ -39,14 +39,14 @@ Report: output of `npm run build`, confirmation that `npm run dev` serves the Vi
 
 Goal: our tables exist in the real Render Postgres.
 
-- [ ] `server/db/index.ts`: `pg` Pool from `DATABASE_URL` with `ssl: { rejectUnauthorized: false }` when the host ends in `.render.com`, exporting a Drizzle client.
-- [ ] `server/db/schema.ts`: the `pets` and `swipes` tables and the four enums exactly as specified in CLAUDE.md §7, including the unique index on `(user_id, pet_id)` and the index on `(user_id, direction)`.
-- [ ] `drizzle.config.ts` pointing at both `schema.ts` and `auth-schema.ts`, output `./drizzle`, dialect `postgresql`.
-- [ ] Generate Better Auth's tables: `npx @better-auth/cli generate` → `server/db/auth-schema.ts`. Don't hand-edit the result.
-- [ ] `server/db/migrate.ts` — a programmatic migrator using `migrate()` from `drizzle-orm/node-postgres/migrator`, logging what it applied and exiting nonzero on failure.
-- [ ] `npm run db:generate` to produce the initial SQL migration. **Commit the `drizzle/` folder.**
-- [ ] `npm run db:migrate` against the real database. Confirm the tables landed.
-- [ ] `shared/types.ts` exporting `Pet`, `SwipeDirection`, and the API response shapes, derived from the Drizzle schema types where possible.
+- [x] `server/db/index.ts`: `pg` Pool from `DATABASE_URL` with `ssl: { rejectUnauthorized: false }` when the host ends in `.render.com`, exporting a Drizzle client.
+- [x] `server/db/schema.ts`: the `pets` and `swipes` tables and the four enums exactly as specified in CLAUDE.md §7, including the unique index on `(user_id, pet_id)` and the index on `(user_id, direction)`.
+- [x] `drizzle.config.ts` pointing at both `schema.ts` and `auth-schema.ts`, output `./drizzle`, dialect `postgresql`.
+- [x] Generate Better Auth's tables: `npx @better-auth/cli generate` → `server/db/auth-schema.ts`. Don't hand-edit the result.
+- [x] `server/db/migrate.ts` — a programmatic migrator using `migrate()` from `drizzle-orm/node-postgres/migrator`, logging what it applied and exiting nonzero on failure.
+- [x] `npm run db:generate` to produce the initial SQL migration. **Commit the `drizzle/` folder.**
+- [x] `npm run db:migrate` against the real database. Confirm the tables landed.
+- [x] `shared/types.ts` exporting `Pet`, `SwipeDirection`, and the API response shapes, derived from the Drizzle schema types where possible.
 
 ### ✋ Gate 1 — stop and report
 
@@ -78,12 +78,12 @@ Report: the row count, a random sample of 8 seeded pets rendered as a readable t
 
 Goal: a person can create an account, sign in, and stay signed in.
 
-- [ ] `server/auth.ts` — Better Auth with the Drizzle adapter, `emailAndPassword: { enabled: true, requireEmailVerification: false }`, secret and base URL from env, `trustedOrigins` covering both the dev origin and the eventual Render origin.
-- [ ] Mount `app.all("/api/auth/*splat", toNodeHandler(auth))` **before** `express.json()`. See CLAUDE.md §11 — this ordering is not optional.
-- [ ] `server/middleware/requireAuth.ts` — reads the session from headers, attaches `req.user`, returns `401 { error: "unauthorized" }` otherwise.
-- [ ] `GET /api/me` behind `requireAuth`.
-- [ ] `client/src/lib/auth-client.ts` — `createAuthClient` from `better-auth/react`.
-- [ ] Verify end to end with curl: sign up, sign in, hit `/api/me` with the cookie, hit it without.
+- [x] `server/auth.ts` — Better Auth with the Drizzle adapter, `emailAndPassword: { enabled: true, requireEmailVerification: false }`, secret and base URL from env, `trustedOrigins` covering both the dev origin and the eventual Render origin.
+- [x] Mount `app.all("/api/auth/*splat", toNodeHandler(auth))` **before** `express.json()`. See CLAUDE.md §11 — this ordering is not optional.
+- [x] `server/middleware/requireAuth.ts` — reads the session from headers, attaches `req.user`, returns `401 { error: "unauthorized" }` otherwise.
+- [x] `GET /api/me` behind `requireAuth`.
+- [x] `client/src/lib/auth-client.ts` — `createAuthClient` from `better-auth/react`.
+- [x] Verify end to end with curl: sign up, sign in, hit `/api/me` with the cookie, hit it without.
 
 ### ✋ Gate 3 — stop and report
 
@@ -97,12 +97,12 @@ Report: the curl transcript for sign-up → sign-in → authorized `/api/me` →
 
 Goal: every endpoint the client will need, working and typed.
 
-- [ ] `GET /api/pets/queue?limit=20` — pets with no swipe row for this user, ordered by a stable pseudo-random hash seeded on the user's id so the order is consistent across refetches. Default limit 20, cap at 50.
-- [ ] `POST /api/swipes` — Zod-validated body, upsert on the `(user_id, pet_id)` unique index, returns `{ matched: boolean }` (true when direction is `like`).
-- [ ] `DELETE /api/swipes/:petId` — undo, `204`.
-- [ ] `GET /api/matches` — liked pets, most recent first.
-- [ ] All four behind `requireAuth`. Consistent `{ error }` shape and real status codes. A catch-all error handler that logs server-side and never leaks stack traces.
-- [ ] `client/src/lib/api.ts` — a small typed client wrapping `fetch`, using the shared types, `credentials: "include"`, and throwing a typed `ApiError` on non-2xx.
+- [x] `GET /api/pets/queue?limit=20` — pets with no swipe row for this user, ordered by a stable pseudo-random hash seeded on the user's id so the order is consistent across refetches. Default limit 20, cap at 50.
+- [x] `POST /api/swipes` — Zod-validated body, upsert on the `(user_id, pet_id)` unique index, returns `{ matched: boolean }` (true when direction is `like`).
+- [x] `DELETE /api/swipes/:petId` — undo, `204`.
+- [x] `GET /api/matches` — liked pets, most recent first.
+- [x] All four behind `requireAuth`. Consistent `{ error }` shape and real status codes. A catch-all error handler that logs server-side and never leaks stack traces.
+- [x] `client/src/lib/api.ts` — a small typed client wrapping `fetch`, using the shared types, `credentials: "include"`, and throwing a typed `ApiError` on non-2xx.
 
 ### ✋ Gate 4 — stop and report
 
