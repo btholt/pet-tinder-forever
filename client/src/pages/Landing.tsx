@@ -46,7 +46,7 @@ export function Landing() {
           </Button>
           <Link
             to="/signin"
-            className="text-sm font-medium text-paper underline underline-offset-4"
+            className="rounded-sm text-sm font-medium text-paper underline underline-offset-4 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
           >
             Already have an account? Sign in
           </Link>

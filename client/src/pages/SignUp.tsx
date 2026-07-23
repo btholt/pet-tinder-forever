@@ -125,7 +125,10 @@ export function SignUp() {
 
       <p className="mt-6 text-sm text-muted-foreground">
         Already have an account?{" "}
-        <Link to="/signin" className="font-medium text-ink underline">
+        <Link
+          to="/signin"
+          className="rounded-sm font-medium text-ink underline outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+        >
           Sign in
         </Link>
       </p>

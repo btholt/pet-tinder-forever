@@ -106,7 +106,10 @@ export function SignIn() {
 
       <p className="mt-6 text-sm text-muted-foreground">
         New to Pawmarks?{" "}
-        <Link to="/signup" className="font-medium text-ink underline">
+        <Link
+          to="/signup"
+          className="rounded-sm font-medium text-ink underline outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+        >
           Create an account
         </Link>
       </p>

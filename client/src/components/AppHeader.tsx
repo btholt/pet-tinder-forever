@@ -17,21 +17,26 @@ export function AppHeader() {
   }
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between border-b border-border px-4 sm:px-6">
-      <Link to="/swipe" aria-label="Pawmarks home">
+    <header className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-border px-3 sm:px-6">
+      <Link
+        to="/swipe"
+        aria-label="Pawmarks home"
+        className="shrink-0 rounded-sm outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+      >
         <Logo />
       </Link>
 
-      <nav className="flex items-center gap-1 text-sm font-medium">
-        <Button asChild variant="ghost" size="sm">
+      <nav className="flex items-center gap-0 text-sm font-medium sm:gap-1">
+        <Button asChild variant="ghost" size="sm" className="px-2 sm:px-3">
           <Link to="/swipe">Swipe</Link>
         </Button>
-        <Button asChild variant="ghost" size="sm">
+        <Button asChild variant="ghost" size="sm" className="px-2 sm:px-3">
           <Link to="/matches">Matches</Link>
         </Button>
         <Button
           variant="ghost"
           size="sm"
+          className="px-2 sm:px-3"
           onClick={handleSignOut}
           aria-label="Sign out"
         >

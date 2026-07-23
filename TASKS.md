@@ -175,14 +175,14 @@ Report: a recording of the takeover firing on a right-swipe, screenshots of `/ma
 
 ## Milestone 8 — Polish and quality pass
 
-- [ ] Walk CLAUDE.md §13 line by line and fix every violation. Report on each item individually.
-- [ ] Test at 320px, 375px, 768px, and 1440px. The deck must be usable at all four.
-- [ ] Every image has meaningful alt text. Every interactive element has a visible focus ring. Tab order is sane on all five routes.
-- [ ] No layout shift on image load anywhere.
-- [ ] Check color contrast on text over photo scrims — deepen the scrim where it fails, don't shrink the text.
-- [ ] Favicon, page title, and `<meta name="description">`.
-- [ ] `README.md`: what it is, local setup, the command table, and the deploy story. Short.
-- [ ] Remove all dead code, unused deps, stray `console.log`s, and any leftover scaffolding from Vite's template.
+- [x] Walk CLAUDE.md §13 line by line and fix every violation. Report on each item individually.
+- [x] Test at 320px, 375px, 768px, and 1440px. The deck must be usable at all four.
+- [x] Every image has meaningful alt text. Every interactive element has a visible focus ring. Tab order is sane on all five routes.
+- [x] No layout shift on image load anywhere.
+- [x] Check color contrast on text over photo scrims — deepen the scrim where it fails, don't shrink the text.
+- [x] Favicon, page title, and `<meta name="description">`.
+- [x] `README.md`: what it is, local setup, the command table, and the deploy story. Short.
+- [x] Remove all dead code, unused deps, stray `console.log`s, and any leftover scaffolding from Vite's template.
 
 ### ✋ Gate 8 — stop and report
 
