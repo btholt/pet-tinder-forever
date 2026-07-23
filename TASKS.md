@@ -116,12 +116,12 @@ Report: a curl transcript exercising all four endpoints in sequence, including t
 
 Goal: everything around the deck.
 
-- [ ] React Router 7 with routes: `/` (landing), `/signin`, `/signup`, `/swipe`, `/matches`.
-- [ ] `<RequireAuth>` and its inverse: signed-in users at `/`, `/signin`, `/signup` go to `/swipe`; signed-out users at `/swipe`, `/matches` go to `/`. Render nothing while the session resolves — never flash the landing page at a signed-in user.
-- [ ] Landing page: full-bleed hero photo, brand-gradient scrim, the logo mark, one headline that says plainly this is a pet adoption app, one supporting line, and a single primary CTA to sign up with a secondary text link to sign in. That's the whole page — no feature grid, no testimonials, no footer links.
-- [ ] Sign-in and sign-up pages: full-bleed pet photo on the left half at `md:` and up, form on the right, single column below that. Inline field errors, a disabled-with-spinner submit state, and a readable message on bad credentials.
-- [ ] App header for signed-in routes: logo left, links to Swipe and Matches, sign-out right. Compact and out of the way.
-- [ ] `sonner` toaster mounted once at the app root, styled to our tokens.
+- [x] React Router 7 with routes: `/` (landing), `/signin`, `/signup`, `/swipe`, `/matches`.
+- [x] `<RequireAuth>` and its inverse: signed-in users at `/`, `/signin`, `/signup` go to `/swipe`; signed-out users at `/swipe`, `/matches` go to `/`. Render nothing while the session resolves — never flash the landing page at a signed-in user.
+- [x] Landing page: full-bleed hero photo, brand-gradient scrim, the logo mark, one headline that says plainly this is a pet adoption app, one supporting line, and a single primary CTA to sign up with a secondary text link to sign in. That's the whole page — no feature grid, no testimonials, no footer links.
+- [x] Sign-in and sign-up pages: full-bleed pet photo on the left half at `md:` and up, form on the right, single column below that. Inline field errors, a disabled-with-spinner submit state, and a readable message on bad credentials.
+- [x] App header for signed-in routes: logo left, links to Swipe and Matches, sign-out right. Compact and out of the way.
+- [x] `sonner` toaster mounted once at the app root, styled to our tokens.
 
 ### ✋ Gate 5 — stop and report
 
