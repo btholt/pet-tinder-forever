@@ -9,6 +9,7 @@ export type SwipeDirection = "like" | "pass";
 export interface Pet {
   id: number;
   name: string;
+  shelterName: string;
   species: "dog" | "cat" | "bird" | "rabbit" | "reptile";
   breed: string;
   ageMonths: number;
@@ -47,6 +48,7 @@ export function toPet(row: PetRow): Pet {
   return {
     id: row.id,
     name: row.name,
+    shelterName: row.shelterName,
     species: row.species,
     breed: row.breed,
     ageMonths: row.ageMonths,

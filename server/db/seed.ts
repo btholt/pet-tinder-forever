@@ -36,8 +36,13 @@ async function main() {
     return;
   }
 
+  const rows = petsSeedData.map((pet) => ({
+    ...pet,
+    shelterName: pet.shelterName ?? `${pet.city} Humane Society`,
+  }));
+
   console.log(`Inserting ${petsSeedData.length} pets ...`);
-  await db.insert(pets).values(petsSeedData);
+  await db.insert(pets).values(rows);
   console.log("Seed complete.");
 }
 

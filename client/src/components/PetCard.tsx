@@ -107,6 +107,7 @@ export function PetCard({
           </span>
         </div>
         <p className="text-base font-medium text-paper/90">{locationLine}</p>
+        <p className="text-sm font-medium text-paper/80">{pet.shelterName}</p>
         <div className="flex flex-wrap gap-1.5">
           <span
             className={`rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide uppercase ${speciesAccentClass[pet.species]}`}

@@ -1,5 +1,6 @@
 export interface PetSeed {
   name: string;
+  shelterName?: string;
   species: "dog" | "cat" | "bird" | "rabbit" | "reptile";
   breed: string;
   ageMonths: number;

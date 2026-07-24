@@ -27,6 +27,7 @@ export const swipeDirectionEnum = pgEnum("swipe_direction", ["like", "pass"]);
 export const pets = pgTable("pets", {
   id: serial("id").primaryKey(),
   name: text("name").notNull(),
+  shelterName: text("shelter_name").notNull().default("Pawmarks Rescue"),
   species: petSpeciesEnum("species").notNull(),
   breed: text("breed").notNull(),
   ageMonths: integer("age_months").notNull(),
